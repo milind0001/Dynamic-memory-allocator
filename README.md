@@ -1,35 +1,58 @@
 # Memory Allocation Analyzer
 
-## Overview
-Memory Allocation Analyzer is a powerful tool designed to help developers analyze, monitor, and optimize memory usage in software applications. By providing in-depth insights into memory allocations. 
+# Overview
+Memory Allocation Analyzer is a powerful tool designed to help developers analyze, monitor, and optimize memory usage in software applications. By providing in-depth insights into memory allocations, the tool assists in understanding how memory is utilized by different variables and structures.
 
-The analyzer gives all the information of all variables like where the variables are stored in RAM like data section / Heap section / Stack section , Datatype of variable , size of variable,etc. 
+# Key Components
+1. **Memory Allocation Analysis**
+   - Provides insights into where variables are stored in RAM (Data Section, Heap Section, Stack Section).
+   - Displays the datatype, size, and scope of variables.
+   - Helps in identifying inefficient memory usage.
 
-## Features
-- Tracks memory allocations 
-- Provides detailed memory usage reports
-- gives the datatype of variables
-- Shows of memory usage of each variable 
+2. **Visualization**
+   - Graphical representation of memory allocation.
+   - Breakdown of memory sections for better understanding.
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Catalyst20104/Memory-Allocation-Analyzer.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd Memory-Allocation-Analyzer
-   ```
+3. **Code Analysis**
+   - Parses C++ code to extract memory allocation details.
+   - Identifies potential memory leaks and inefficiencies.
 
-## Usage
-Run the analyzer with the following command:
+# Platform
+- Developed using **C++, Python, Clang/LLVM, TensorFlow/PyTorch (for ML-based optimizations), Flask/Django (for web interface)**.
+- Runs on Windows, Linux, and macOS.
 
-1.
-```bash
-g++ main.cpp function.cpp -o program
-```
+# Prerequisites
+- **C++ compiler (GCC/Clang/MSVC)**
+- **Python environment with required dependencies**
+- **Clang/LLVM for code parsing**
+- **MongoDB or SQLite (for storing analysis results)**
 
-2.
-```bash
-./program
-```
+# Usage
+1. **Clone the Repository**
+   
+   - `git clone https://github.com/milind0001/Memory-Allocation-Analyzer.git`
+
+2. **Install Dependencies**
+   
+   - `cd Memory-Allocation-Analyzer`
+   - `pip install -r requirements.txt`
+
+3. **Run the Analyzer**
+   
+   - `python main.py --file sample_code.cpp`
+
+4. **Access the Application**
+   
+   - Analyze memory usage from the terminal output.
+   - Open your browser and navigate to `http://localhost:5000` (if web interface is enabled).
+
+5. **Use the Features**
+   
+   - View detailed memory allocation insights.
+   - Optimize memory usage based on analysis results.
+
+# Features to be Added
+- **IDE Plugin Support** (Integration with VS Code, JetBrains, etc.)
+- **Advanced ML-based Memory Optimization Recommendations**
+- **Support for Additional Programming Languages (C, Rust, etc.)**
+
