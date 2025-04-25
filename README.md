@@ -55,10 +55,10 @@ cd Dynamic-memory-allocator
 
 ### 2. Compile the Project
 ```bash
-g++ -std=c++17 -o allocator main.cpp allocator.cpp
+g++ main.cpp function.cpp -o program
 ```
 
 ### 3. Run the Program
 ```bash
-./allocator
+./program
 ```
