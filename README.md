@@ -1,6 +1,6 @@
 # Dynamic Memory Allocator
 
-## 📘 Overview
+##  Overview
 **Dynamic Memory Allocator** is a custom implementation of dynamic memory management in C++.  
 It mimics the behavior of standard memory allocation functions like `malloc`, `calloc`, `realloc`, and `free`, allowing users to understand how memory management works under the hood.
 
@@ -8,7 +8,7 @@ This project is especially useful for systems programming learners and those int
 
 ---
 
-## 🧱 Key Components
+##  Key Components
 
 ### 1. Custom Heap Management
 - Implements manual memory allocation and deallocation.
@@ -31,32 +31,34 @@ This project is especially useful for systems programming learners and those int
 
 ---
 
-## 🖥️ Platform
+## Platform
 - Language: **C++**
 - Supported OS: **Linux**, **Windows**, **macOS**
 - Compiler: **GCC / Clang / MSVC** (C++17 or above)
 
 ---
 
-## 🔧 Prerequisites
+## Prerequisites
 - A working **C++17** compiler
 - (Optional) **Make** for Unix-based systems
 - Basic understanding of pointers and memory operations
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/milind0001/Dynamic-memory-allocator.git
 cd Dynamic-memory-allocator
+```
 
 ### 2. Compile the Project
 ```bash
 g++ -std=c++17 -o allocator main.cpp allocator.cpp
+```
 
 ### 3. Run the Program
 ```bash
-git clone https://github.com/milind0001/Dynamic-memory-allocator.git
-cd Dynamic-memory-allocator
+./allocator
+```
