@@ -181,7 +181,7 @@ void printing_text_sextion(string &file_name){
 	 	outFile<<endl;
 	 	 
 	 }
-	cout<<"###### Data Section ######"<<endl;
+	cout<<"###### Text Section ######"<<endl;
 	cout<<endl;
 	cout<<"    "<<file_name<<endl;
 	cout<<endl;
