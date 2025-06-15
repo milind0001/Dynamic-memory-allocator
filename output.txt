@@ -6,7 +6,7 @@ Overall analysis
     Total dynamic variables = 2
     Total global variables = 3
 
-###### Data Section ######
+###### Text Section ######
 
     input.txt
 
