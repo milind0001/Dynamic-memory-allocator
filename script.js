@@ -200,13 +200,20 @@ function switchTab(tabName) {
     document.getElementById(tabName).classList.add('active');
 }
 
+
 function loadExample() {
     codeInput.value = exampleCode;
+
+    // Enable analyze button since example is now loaded
+    analyzeBtn.disabled = false;
+
     codeInput.classList.add('success');
     setTimeout(() => {
         codeInput.classList.remove('success');
     }, 2000);
 }
+
+
 
 function clearAll() {
     codeInput.value = '';
@@ -246,4 +253,5 @@ document.addEventListener('keydown', (e) => {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     analyzeBtn.disabled = true;
+
 }); 
