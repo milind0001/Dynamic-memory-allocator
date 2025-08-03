@@ -118,7 +118,15 @@ function performAnalysis(code) {
         if (stackPattern.test(trimmedLine) && isInsideFunction(code, index)) {
             const varName = extractVariableName(trimmedLine);
             if (varName && !trimmedLine.includes('new')) {
-                analysis.stackVars.push(trimmedLine);
+            // Filter out loop variables and only include actual variable declarations
+            // Skip lines that are part of for/while loops or contain increment/decrement
+                if (!trimmedLine.match(/for\s*\(.*\)/) && 
+                    !trimmedLine.match(/while\s*\(.*\)/) &&
+                    !trimmedLine.includes('++') && 
+                    !trimmedLine.includes('--') &&
+                    !trimmedLine.match(/.*\s*=\s*.*\s*[+\-*/]/)) {
+                    analysis.stackVars.push(trimmedLine);
+                }
             }
         }
         
@@ -255,3 +263,4 @@ document.addEventListener('DOMContentLoaded', () => {
     analyzeBtn.disabled = true;
 
 }); 
+
