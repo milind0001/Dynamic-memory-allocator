@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Memory Allocator Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-memory"></i> Dynamic Memory Allocator</h1>
+            <p>Analyze C++ code and understand memory allocation patterns</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="input-section">
+                <h2><i class="fas fa-code"></i> Input C++ Code</h2>
+                <textarea id="codeInput" placeholder="Enter your C++ code here...&#10;&#10;Example:&#10;int main() {&#10;    int* ptr = new int(10);&#10;    int localVar = 5;&#10;    return 0;&#10;}"></textarea>
+                <div class="button-group">
+                    <button id="analyzeBtn" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Analyze Code
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                    <button id="exampleBtn" class="btn btn-outline">
+                        <i class="fas fa-lightbulb"></i> Load Example
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2><i class="fas fa-chart-bar"></i> Analysis Results</h2>
+                
+                <div class="overview-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 id="totalLines">0</h3>
+                            <p>Total Lines</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 id="totalFunctions">0</h3>
+                            <p>Functions</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 id="totalDataVars">0</h3>
+                            <p>Data Variables</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 id="totalStackVars">0</h3>
+                            <p>Stack Variables</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 id="totalHeapVars">0</h3>
+                            <p>Heap Variables</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detailed-analysis">
+                    <div class="analysis-tabs">
+                        <button class="tab-btn active" data-tab="functions">
+                            <i class="fas fa-cogs"></i> Functions
+                        </button>
+                        <button class="tab-btn" data-tab="data">
+                            <i class="fas fa-database"></i> Data Section
+                        </button>
+                        <button class="tab-btn" data-tab="stack">
+                            <i class="fas fa-layer-group"></i> Stack Section
+                        </button>
+                        <button class="tab-btn" data-tab="heap">
+                            <i class="fas fa-cube"></i> Heap Section
+                        </button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="functions" class="tab-pane active">
+                            <div class="code-block">
+                                <h4>Functions Found:</h4>
+                                <pre id="functionsList">No functions found</pre>
+                            </div>
+                        </div>
+                        <div id="data" class="tab-pane">
+                            <div class="code-block">
+                                <h4>Data Section Variables:</h4>
+                                <pre id="dataList">No data variables found</pre>
+                            </div>
+                        </div>
+                        <div id="stack" class="tab-pane">
+                            <div class="code-block">
+                                <h4>Stack Section Variables:</h4>
+                                <pre id="stackList">No stack variables found</pre>
+                            </div>
+                        </div>
+                        <div id="heap" class="tab-pane">
+                            <div class="code-block">
+                                <h4>Heap Section Variables:</h4>
+                                <pre id="heapList">No heap variables found</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2><i class="fas fa-info-circle"></i> How It Works</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3><i class="fas fa-code"></i> Code Analysis</h3>
+                        <p>The analyzer reads C++ code and identifies different types of memory allocations and variable declarations.</p>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fas fa-sitemap"></i> Memory Sections</h3>
+                        <p>Categorizes variables into Data (global), Stack (local), and Heap (dynamic) memory sections.</p>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fas fa-chart-line"></i> Function Detection</h3>
+                        <p>Identifies function definitions and analyzes their scope and variable usage patterns.</p>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fas fa-file-alt"></i> Detailed Report</h3>
+                        <p>Generates comprehensive analysis showing memory allocation patterns and code structure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Dynamic Memory Allocator Analyzer. Built with modern web technologies.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
